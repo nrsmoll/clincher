@@ -1,0 +1,47 @@
+{% extends 'acrrmlogbook/base.html' %}
+{% block label %}Patient Visits{% endblock %}
+
+
+{% block body %}
+
+
+<h1>{{ main.name }}</h1>
+<h3>{{ main.date_of_birth }}</h3>
+
+<div class="row">
+    <div class="col-sm">
+        <ul>
+        {% for visit in all_visits %}
+            <li><a href="{{ visit.get_absolute_url }}">{{ visit.visit_date }} - {{ visit.visit_label }}</a>
+                    <a href="{% url 'acrrmlogbook:visit-update' main.id %}" role="button" class="btn btn-primary btn-xs">Edit</a>
+                    <form action="{% url 'acrrmlogbook:visit-delete' main.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ visit.id }}"/>
+                        <button type="submit" class="btn  btn-primary btn-xs"/>
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </form>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+ </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
