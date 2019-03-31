@@ -1,5 +1,5 @@
 <!-- Loads the path to the static files-->
-{% extends 'acrrmlogbook/base.html' %}
+{% extends 'clinicalviewer/base.html' %}
 {% block label %}Patient Names{% endblock %}
 
 {% block body %}
@@ -14,11 +14,11 @@
         <ul>
         {% for main in all_patients %}
 
-            <li><a href="#">{{ main.name }} - {{ main.date_of_birth }}</a>
+            <li><a href="#">{{ main.firstname }} {{ main.lastname }} - {{ main.date_of_birth }}</a>
 
-                    <a href="{% url 'acrrmlogbook:detail' main.id %}" role="button" class="btn btn-primary btn-xs">View</a>
-                    <a href="{% url 'acrrmlogbook:main-update' main.id %}" role="button" class="btn btn-primary btn-xs">Edit</a>
-                    <form action="{% url 'acrrmlogbook:main-delete' main.id %}" method="post" style="display: inline;">
+                    <a href="{% url 'clinicalviewer:detail' main.id %}" role="button" class="btn btn-primary btn-xs">View</a>
+                    <a href="{% url 'clinicalviewer:main-update' main.id %}" role="button" class="btn btn-primary btn-xs">Edit</a>
+                    <form action="{% url 'clinicalviewer:main-delete' main.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
                         <input type="hidden" name="id" value="{{ main.id }}"/>
                         <button type="submit" class="btn  btn-primary btn-xs"/>

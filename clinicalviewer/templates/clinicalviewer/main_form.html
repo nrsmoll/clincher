@@ -1,5 +1,5 @@
 <!-- Loads the path to the static files-->
-{% extends 'acrrmlogbook/base.html' %}
+{% extends 'clinicalviewer/base.html' %}
 {% block label %}New Patient{% endblock %}
 
 {% block body %}
@@ -16,7 +16,7 @@
 
                     <form class="form-horizonal" action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {% include 'acrrmlogbook/form-template.html' %}
+                        {% include 'clinicalviewer/form-template.html' %}
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                  <button type="submit" class="btn btn-success">Submit</button>
