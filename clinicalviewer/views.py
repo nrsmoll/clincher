@@ -22,7 +22,7 @@ class MainCreate(CreateView):
 
 class MainUpdate(UpdateView):
     model = Main
-    fields = ['name', 'date_of_birth']
+    fields = ['firstname', 'lastname', 'date_of_birth']
 
 class MainDelete(DeleteView):
     model = Main
@@ -30,7 +30,9 @@ class MainDelete(DeleteView):
 
 class VisitCreate(CreateView):
     model = Visit
-    fields = ['fk_visit_patient', 'visit_date']
+    fields = ['visit_date', 'visit_notes']
+    b = Main.objects.get(id=self.kwargs['pk'])
+    e = b.entry_set.create(fk_visit_main = b)
 
 
 
