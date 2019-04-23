@@ -1,0 +1,22 @@
+{% extends "clinicalviewer/base.html" %}
+
+{% block header %}{% endblock %}
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+<center>
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    <h2>Login</h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+<p>If no account, sign up <a href="#">here</a></p>
+
+</center>
+{% endblock %}

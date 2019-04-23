@@ -1,52 +1,22 @@
 <!-- Loads the path to the static files-->
 {% extends 'clinicalviewer/base.html' %}
-{% block label %}Patient Names{% endblock %}
+{% block label %}Homepage{% endblock %}
+
+
 
 {% block body %}
-<div class="container">
+    <center>
 
 
-<!-- Loads the path to the static files-->
-{% extends 'base.html' %}
-{% block label %}Patient Names{% endblock %}
+<h3>Welcome to Clincher</h3>
 
-{% block body %}
-    {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
   Hi {{ user.username }}!
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
 {% endif %}
 
-<div class="container" xmlns="http://www.w3.org/1999/html">
-
-<h3>Patient List</h3>
- <div class="row">
-    <div class="col-sm">
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>DOB</th>
-                <th>Actions</th>
-            </tr>
-            {% for main in all_patients %}
-                <tr>
-                    <td><a href="{% url 'clinicalviewer:main_detail' main.id %}">{{ main.full_name }}</a></td>
-                    <td>{{ main.date_of_birth }}</td>
-                    <td><a href="{% url 'clinicalviewer:visit_form' main.id %}"  role="button" class="btn btn-primary btn-xs">New Consult</a></td>
-                    <td><a href="#" role="button" class="btn btn-primary btn-xs">New Procedure</a></td>
-                    <td><a href="{% url 'clinicalviewer:main_detail' main.id %}" role="button" class="btn btn-primary btn-xs">Visit List</a></td>
-                    <td><a href="{% url 'clinicalviewer:main_update' main.id %}" role="button" class="btn btn-primary btn-xs">Edit Details</a></td>
-                    <td><form action="{% url 'clinicalviewer:main_delete' main.id %}" method="post" style="display: inline;">
-                        {% csrf_token %}
-                        <input type="hidden" name="id" value="{{ main.id }}"/>
-                        <button type="submit" class="btn  btn-primary btn-xs"/>
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </form></td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
- </div>
+    </center>
 {% endblock %}
 

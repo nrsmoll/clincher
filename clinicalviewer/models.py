@@ -16,7 +16,7 @@ class Main(models.Model):
 
     #Redirects after form is submitted using primary key
     def get_absolute_url(self):
-        return reverse('clinicalviewer:detail', kwargs={'pk': self.pk})
+        return reverse('clinicalviewer:main-detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.firstname + ' ' + self.lastname + ' - ' + self.date_of_birth
