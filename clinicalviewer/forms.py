@@ -1,19 +1,20 @@
 from django import forms
-from .models import Main, Visit
-from django.forms import ModelForm
+from .models import Profile, Visit
+from django.forms import ModelForm, Form
+
 
 
 
 class MainForm(ModelForm):
     class Meta:
-        model = Main
-        fields = ('firstname', 'middlename', 'lastname', 'date_of_birth', 'sex', 'address')
+        model = Profile
+        fields = ('firstname', 'middlename', 'lastname', 'date_of_birth', 'sex',)
         widgets = {
-            'date_of_birth': DateInput(),
+            'date_of_birth': forms.DateInput(),
         }
 
 
-class VisitForm(forms.Form):
+class VisitForm2(Form):
     visit_types_list = (
         (str(1), 'Consultation'),
         (str(2), 'Procedure'),
@@ -23,6 +24,10 @@ class VisitForm(forms.Form):
     progress_note = forms.CharField(widget=forms.Textarea)
 
     def form_valid(self, form):
-        form.instance.fk_visit_user = self.request.user
-        form.instance.fk_visit_main = Main.objects.get(id=self.kwargs['pk'])
+        form.instance.fk_visit_profile = Profile.objects.get(id=self.kwargs['pk'])
         return super().form_valid(form)
+
+class VisitForm(forms.ModelForm):
+    class Meta:
+        model = Visit
+        fields = ('__all__')

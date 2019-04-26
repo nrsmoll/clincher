@@ -4,17 +4,20 @@
 
 {% block body %}
 
+{% include 'clinicalviewer/pt_sidebar.html' %}
 
-<h1>{{ main.firstname}} {{ main.lastname}}</h1>
-<h3>{{ main.date_of_birth }}</h3>
-
+<center>
+<h1>{{ profile.firstname}} {{ profile.lastname}}</h1>
+<h3>{{ profile.date_of_birth }}</h3>
+</center>
+    <center>
 <div class="row">
     <div class="col-sm">
         <ul>
-        {% for visit in all_visits %}
+        {% for visit in visit_set %}
             <li><a href="{{ visit.get_absolute_url }}">{{ visit.visit_date }} - {{ visit.visit_label }}</a>
-                    <a href="{% url 'clinicalviewer:visit-update' main.id %}" role="button" class="btn btn-primary btn-xs">Edit</a>
-                    <form action="{% url 'clinicalviewer:visit-delete' main.id %}" method="post" style="display: inline;">
+                    <a href="#" role="button" class="btn btn-primary btn-xs">Edit</a>
+                    <form action="{% url 'clinicalviewer:visit-delete' visit.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
                         <input type="hidden" name="id" value="{{ visit.id }}"/>
                         <button type="submit" class="btn  btn-primary btn-xs"/>
@@ -25,7 +28,7 @@
         </ul>
     </div>
  </div>
-
+</center>
 
 {% endblock %}
 

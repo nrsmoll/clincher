@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
-class Main(models.Model):
+class Profile(models.Model):
     firstname = models.CharField(max_length = 256)
     middlename = models.CharField(max_length = 256)
     lastname = models.CharField(max_length=256)
@@ -16,14 +16,14 @@ class Main(models.Model):
 
     #Redirects after form is submitted using primary key
     def get_absolute_url(self):
-        return reverse('clinicalviewer:main-detail', kwargs={'pk': self.pk})
+        return reverse('clinicalviewer:profile-detail', kwargs={'pk': self.pk})
 
     def __str__(self):
-        return self.firstname + ' ' + self.lastname + ' - ' + self.date_of_birth
+        return self.firstname + ' ' + self.lastname + ' - ' + str(self.date_of_birth)
 
 
 class Visit(models.Model):
-    fk_visit_main = models.ForeignKey(Main, on_delete=models.CASCADE, verbose_name=('Patient Name'))
+    fk_visit_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=('Patient Name'))
     visit_date = models.DateField()
     visit_label = models.CharField(max_length=256, blank=True, null=True)
     visit_types_list = (
@@ -42,4 +42,4 @@ class Visit(models.Model):
         return str(self.visit_label)
 
     def get_absolute_url(self):
-        return reverse('clinicalviewer:detail', kwargs={'pk': self.pk})
+        return reverse('clinicalviewer:visit-detail', kwargs={'pk': self.pk})
