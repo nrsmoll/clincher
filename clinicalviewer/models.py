@@ -42,4 +42,4 @@ class Visit(models.Model):
         return str(self.visit_label)
 
     def get_absolute_url(self):
-        return reverse('clinicalviewer:visit-detail', kwargs={'pk': self.pk})
+        return reverse('clinicalviewer:profile-detail', kwargs={'pk': self.pk})

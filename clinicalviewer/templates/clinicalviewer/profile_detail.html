@@ -9,12 +9,14 @@
 <center>
 <h1>{{ profile.firstname}} {{ profile.lastname}}</h1>
 <h3>{{ profile.date_of_birth }}</h3>
+<button type="button">New Visit</button>
+
 </center>
     <center>
 <div class="row">
     <div class="col-sm">
         <ul>
-        {% for visit in visit_set %}
+        {% for visit in object.visit_set.all %}
             <li><a href="{{ visit.get_absolute_url }}">{{ visit.visit_date }} - {{ visit.visit_label }}</a>
                     <a href="#" role="button" class="btn btn-primary btn-xs">Edit</a>
                     <form action="{% url 'clinicalviewer:visit-delete' visit.id %}" method="post" style="display: inline;">

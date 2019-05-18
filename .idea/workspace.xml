@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b27ab820-ed6b-4986-8cd7-f8d15e5bbfa6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/logbook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clincher.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="b27ab820-ed6b-4986-8cd7-f8d15e5bbfa6" name="Default" comment="Related objects not completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/migrations/0002_visit_is_favorite.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/migrations/0003_auto_20180302_1142.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/migrations/0004_auto_20180302_1144.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/templates/acrrmlogbook/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/templates/acrrmlogbook/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/templates/acrrmlogbook/form-template.html" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/form-template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/templates/acrrmlogbook/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/templates/acrrmlogbook/main_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/main_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/templates/acrrmlogbook/visit_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/visit_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acrrmlogbook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbook/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ehr/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbook/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ehr/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ehr/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbook/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/ehr/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinicalviewer/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinicalviewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/profile_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/profile_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinicalviewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinicalviewer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ehr/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ehr/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinicalviewer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="285">
+              <caret line="19" column="97" selection-start-line="19" selection-start-column="97" selection-end-line="19" selection-end-column="97" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -57,40 +33,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/main_form.html">
+        <entry file="file://$PROJECT_DIR$/ehr/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+            <state relative-caret-position="363">
+              <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinicalviewer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="228">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#99#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/form-template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -98,50 +56,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="25" column="85" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="93" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicalviewer/models.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/profile_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/visit_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicalviewer/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+            <state relative-caret-position="270">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -151,8 +76,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -161,7 +86,13 @@
     <findStrings>
       <find>logbook</find>
       <find>name</find>
+      <find>clincher</find>
+      <find>main</find>
     </findStrings>
+    <replaceStrings>
+      <replace>clinicalviewer</replace>
+      <replace>profile</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -184,31 +115,41 @@
         <option value="$PROJECT_DIR$/acrrmlogbook/urls.py" />
         <option value="$PROJECT_DIR$/clinicalviewer/templates/acrrmlogbook/visit_form.html" />
         <option value="$PROJECT_DIR$/clinicalviewer/apps.py" />
-        <option value="$PROJECT_DIR$/ehr/settings.py" />
         <option value="$PROJECT_DIR$/clinicalviewer/tests.py" />
-        <option value="$PROJECT_DIR$/ehr/urls.py" />
-        <option value="$PROJECT_DIR$/clinicalviewer/urls.py" />
         <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/detail.html" />
-        <option value="$PROJECT_DIR$/clinicalviewer/models.py" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/registration/logout.html" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/main.html" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/index.html" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/pt_sidebar.html" />
+        <option value="$PROJECT_DIR$/clinicalviewer/static/css/style.css" />
+        <option value="$PROJECT_DIR$/clinicalviewer/static/clinicalviewer/style.css" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/main_detail.html" />
+        <option value="$PROJECT_DIR$/ehr/urls.py" />
         <option value="$PROJECT_DIR$/clinicalviewer/admin.py" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/home.html" />
+        <option value="$PROJECT_DIR$/clinicalviewer/forms.py" />
         <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/base.html" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/visit_detail.html" />
+        <option value="$PROJECT_DIR$/clinicalviewer/urls.py" />
+        <option value="$PROJECT_DIR$/ehr/settings.py" />
+        <option value="$PROJECT_DIR$/clinicalviewer/models.py" />
         <option value="$PROJECT_DIR$/clinicalviewer/views.py" />
+        <option value="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/profile_detail.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="257" />
-    <option name="y" value="90" />
-    <option name="width" value="1452" />
-    <option name="height" value="838" />
+    <option name="x" value="104" />
+    <option name="y" value="137" />
+    <option name="width" value="1673" />
+    <option name="height" value="850" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,10 +175,16 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="clinicalviewer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="clincher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clincher" type="462c0819:PsiDirectoryNode" />
+              <item name="ehr" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,16 +192,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="DjangoTemplate" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/PyProjects/nrsmoll" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/PyProjects/clincher" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/acrrmlogbook/static/css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer" />
+      <recent name="$PROJECT_DIR$/clinicalviewer/templates" />
       <recent name="$PROJECT_DIR$/acrrmlogbook/templates/acrrmlogbook" />
     </key>
   </component>
@@ -307,29 +257,57 @@
       <updated>1519818918552</updated>
       <workItem from="1545126936810" duration="3916000" />
       <workItem from="1554026994688" duration="2715000" />
-      <workItem from="1554029725421" duration="2684000" />
+      <workItem from="1554029725421" duration="4238000" />
+      <workItem from="1554703262817" duration="4293000" />
+      <workItem from="1556023915164" duration="2272000" />
+      <workItem from="1556071010638" duration="7680000" />
+      <workItem from="1556175776623" duration="15379000" />
+      <workItem from="1556243938482" duration="3933000" />
+      <workItem from="1556880517910" duration="632000" />
+      <workItem from="1558137381721" duration="7781000" />
     </task>
+    <task id="LOCAL-00001" summary="Large changes - path added, model updated">
+      <created>1554032435493</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554032435493</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Related objects not completed">
+      <created>1554033882357</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554033882357</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Related objects Working!">
+      <created>1556247318815</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556247318815</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9315000" />
+    <option name="totallyTimeSpent" value="52839000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="257" y="90" width="1452" height="838" extended-state="0" />
-    <editor active="true" />
+    <frame x="104" y="137" width="1673" height="850" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21763869" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20590043" />
       <window_info id="Structure" order="1" weight="0.24976873" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32863188" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.325811" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32038835" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.328125" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32722145" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32722145" />
       <window_info anchor="bottom" id="manage.py@logbook" order="10" weight="0.32930514" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -344,12 +322,12 @@
       <window_info anchor="right" id="R Graphics" order="6" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21763869" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18187134" />
       <window_info id="Structure" order="1" weight="0.24976873" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32863188" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.325811" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.325811" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -372,6 +350,12 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Large changes - path added, model updated" />
+    <MESSAGE value="Related objects not completed" />
+    <MESSAGE value="Related objects Working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Related objects Working!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
@@ -406,23 +390,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ehr/urls.py">
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/registration/logout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/static/clinicalviewer/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/urls.py">
+    <entry file="file://$PROJECT_DIR$/ehr/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="60">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/pt_sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/visit_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -433,82 +459,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ehr/settings.py">
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/visit_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/detail.html">
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="450">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/visit_form.html">
+    <entry file="file://$PROJECT_DIR$/ehr/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        <state relative-caret-position="363">
+          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/main_form.html">
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state relative-caret-position="285">
+          <caret line="19" column="97" selection-start-line="19" selection-start-column="97" selection-end-line="19" selection-end-column="97" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/index.html">
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/profile_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+        <state relative-caret-position="360">
+          <caret line="24" column="27" selection-start-line="16" selection-start-column="20" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clinicalviewer/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state relative-caret-position="348">
+          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/admin.py">
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="25" column="85" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
+        <state relative-caret-position="195">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clinicalviewer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="228">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#99#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicalviewer/templates/clinicalviewer/profile_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
         </state>
       </provider>
     </entry>

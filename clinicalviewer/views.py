@@ -50,7 +50,10 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(VisitCreate, self).get_context_data(**kwargs)
         context['form'] = VisitForm(initial={'fk_visit_profile': self.object})
+        context['visit_set'] = Visit.objects.select_related('fk_visit_profile').all()
         return context
+
+
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -67,14 +70,15 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
     def get_success_url(self):
         return reverse('clinicalviewer:profile-detail', kwargs={'pk': self.object.pk})
 
-
 class VisitDetail(LoginRequiredMixin, DetailView):
     model = Visit
     template_name = 'clinicalviewer/visit_detail.html'
 
 class VisitDelete(LoginRequiredMixin, DeleteView):
     model = Visit
-    success_url = reverse_lazy('clinicalviewer:profile-detail')
+
+    def get_success_url(self):
+        return reverse('clinicalviewer:profile-detail', kwargs={'pk': self.object.fk_visit_profile.pk})
 
 
 
