@@ -50,7 +50,7 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(VisitCreate, self).get_context_data(**kwargs)
         context['form'] = VisitForm(initial={'fk_visit_profile': self.object})
-        context['visit_set'] = Visit.objects.select_related('fk_visit_profile').all()
+        #context['visit_set'] = Visit.objects.select_related('fk_visit_profile').all()
         return context
 
 
