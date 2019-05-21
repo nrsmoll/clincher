@@ -1,17 +1,20 @@
 from django import forms
 from .models import Profile, Visit
 from django.forms import ModelForm, Form
+import datetime
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 
-
-
-class MainForm(ModelForm):
+class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         fields = ('firstname', 'middlename', 'lastname', 'date_of_birth', 'sex',)
         widgets = {
-            'date_of_birth': forms.DateInput(),
+            'date_of_birth': DateInput(),
         }
+
 
 
 class VisitForm2(Form):
@@ -27,7 +30,10 @@ class VisitForm2(Form):
         form.instance.fk_visit_profile = Profile.objects.get(id=self.kwargs['pk'])
         return super().form_valid(form)
 
+
+
 class VisitForm(forms.ModelForm):
+    visit_date = forms.DateField(initial=datetime.date.today, widget = DateInput())
     class Meta:
         model = Visit
         fields = ('__all__')

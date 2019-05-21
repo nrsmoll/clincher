@@ -4,7 +4,7 @@ from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.edit import FormMixin, ModelFormMixin
 from django.urls import reverse_lazy, reverse
 from .models import Profile, Visit
-from .forms import VisitForm
+from .forms import VisitForm, ProfileForm
 
 
 class IndexView(ListView):
@@ -31,7 +31,7 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
 class ProfileCreate(LoginRequiredMixin, CreateView):
     model = Profile
-    fields = ['firstname', 'lastname', 'date_of_birth']
+    form_class = ProfileForm
     template_name = 'clinicalviewer/profile_form.html'
 
 class ProfileUpdate(LoginRequiredMixin, UpdateView):
