@@ -1,0 +1,42 @@
+
+from django.contrib.auth import get_user_model
+
+get_user_model().objects.create_superuser(username='nrsmoll',
+                                first_name='Nicolas',
+                                last_name='Smoll',
+                                date_of_birth='1983-07-06',
+                                email='nrsmoll@bgmail.com',
+                                password='qsxwdc12')
+
+user = get_user_model().objects.create_user(username='gparker',
+                                first_name='Gabriel',
+                                last_name='Parker',
+                                date_of_birth='1979-04-14',
+                                email='drgabrielparker1@gmail.com',
+                                password='fullystoked',
+                                is_staff='True')
+user.save
+
+
+user = get_user_model().objects.create_user(username='john',
+                                first_name='John',
+                                last_name='Lennon',
+                                date_of_birth='1945-05-21',
+                                email='jlennon@beatles.com',
+                                password='glass onion',
+                                is_staff='False')
+user.save
+
+
+
+user = get_user_model().objects.create_user(username='jperalta',
+                                first_name='Jake',
+                                last_name='Peralta',
+                                date_of_birth='1984-03-21',
+                                email='jperalta@gmail.com',
+                                password='fullystoked',
+                                is_staff='False')
+user.save
+
+
+

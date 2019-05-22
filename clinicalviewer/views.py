@@ -1,59 +1,56 @@
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.detail import SingleObjectMixin
-from django.views.generic.edit import FormMixin, ModelFormMixin
+from django.views.generic.edit import FormMixin
 from django.urls import reverse_lazy, reverse
-from .models import Profile, Visit
-from .forms import VisitForm, ProfileForm
-
+from .models import Visit
+from .forms import VisitForm, PatientForm
+from django.contrib.auth import get_user_model
 
 class IndexView(ListView):
     template_name = 'clinicalviewer/index.html'
     context_object_name = 'all_patients'
 
     def get_queryset(self):
-        return Profile.objects.all()
+        return get_user_model().objects.all()
 
-class ProfileView(LoginRequiredMixin, ListView):
-    model = Profile
+class PatientView(LoginRequiredMixin, ListView):
+    model = get_user_model()
     # context_object_name = 'all_patients' <- object_list is the default name
     template_name = 'clinicalviewer/home.html'
 
-class ProfileDetailView(LoginRequiredMixin, DetailView):
-    model = Profile
-    template_name = 'clinicalviewer/profile_detail.html'
+class PatientDetailView(LoginRequiredMixin, DetailView):
+    model = get_user_model()
+    template_name = 'clinicalviewer/patient_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ProfileDetailView, self).get_context_data(**kwargs)
+        context = super(PatientDetailView, self).get_context_data(**kwargs)
         context['visit_set'] = Visit.objects.all()
         # And so on for more models
         return context
 
-class ProfileCreate(LoginRequiredMixin, CreateView):
-    model = Profile
-    form_class = ProfileForm
-    template_name = 'clinicalviewer/profile_form.html'
+class PatientCreate(LoginRequiredMixin, CreateView):
+    model = get_user_model()
+    form_class = PatientForm
+    template_name = 'clinicalviewer/patient_form.html'
 
-class ProfileUpdate(LoginRequiredMixin, UpdateView):
-    model = Profile
-    fields = ['firstname', 'lastname', 'date_of_birth']
+class PatientUpdate(LoginRequiredMixin, UpdateView):
+    model = get_user_model()
+    form_class = PatientForm
+    template_name = 'clinicalviewer/patient_form.html'
 
-class ProfileDelete(LoginRequiredMixin, DeleteView):
-    model = Profile
+class PatientDelete(LoginRequiredMixin, DeleteView):
+    model = get_user_model()
     success_url = reverse_lazy('clinicalviewer:index')
 
 class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
-    model = Profile
+    model = get_user_model()
     form_class = VisitForm
     template_name = 'clinicalviewer/visit_form.html'
 
     def get_context_data(self, **kwargs):
         context = super(VisitCreate, self).get_context_data(**kwargs)
-        context['form'] = VisitForm(initial={'fk_visit_profile': self.object})
-        #context['visit_set'] = Visit.objects.select_related('fk_visit_profile').all()
+        context['form'] = VisitForm(initial={'users': self.object})
         return context
-
-
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -68,7 +65,7 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
         return super(VisitCreate, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse('clinicalviewer:profile-detail', kwargs={'pk': self.object.pk})
+        return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.pk})
 
 class VisitDetail(LoginRequiredMixin, DetailView):
     model = Visit
@@ -78,7 +75,7 @@ class VisitDelete(LoginRequiredMixin, DeleteView):
     model = Visit
 
     def get_success_url(self):
-        return reverse('clinicalviewer:profile-detail', kwargs={'pk': self.object.fk_visit_profile.pk})
+        return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.user.pk})
 
 
 

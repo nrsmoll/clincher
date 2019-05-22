@@ -14,23 +14,23 @@
                 <th>DOB</th>
                 <th>Actions</th>
             </tr>
-            {% for profile in object_list %}
+            {% for users in object_list %}
                 <tr>
-                    <td><a href="{% url 'clinicalviewer:profile-detail' profile.id %}">{{profile.firstname}} {{profile.lastname}}</a></td>
-                    <td> {{ profile.date_of_birth }} </td>
-                    <td><a href="{% url 'clinicalviewer:visit-form' profile.id %}"  role="button" class="btn btn-primary btn-xs">New Consult</a></td>
+                    <td><a href="{% url 'clinicalviewer:patient-detail' users.id %}">{{users.first_name}} {{users.last_name}}</a></td>
+                    <td> {{ users.date_of_birth }} </td>
+                    <td><a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="btn btn-primary btn-xs">New Consult</a></td>
                     <td><a href="#" role="button" class="btn btn-primary btn-xs">New Procedure</a></td>
-                    <td><a href="{% url 'clinicalviewer:profile-detail' profile.id %}" role="button" class="btn btn-primary btn-xs">Visit List</a></td>
-                    <td><a href="{% url 'clinicalviewer:profile-update' profile.id %}" role="button" class="btn btn-primary btn-xs">Edit Details</a></td>
-                    <td><form action="{% url 'clinicalviewer:profile-delete' profile.id %}" method="post" style="display: inline;">
+                    <td><a href="{% url 'clinicalviewer:patient-detail' users.id %}" role="button" class="btn btn-primary btn-xs">Visit List</a></td>
+                    <td><a href="{% url 'clinicalviewer:patient-update' users.id %}" role="button" class="btn btn-primary btn-xs">Edit Details</a></td>
+                    <td><form action="{% url 'clinicalviewer:patient-delete' users.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
-                        <input type="hidden" name="id" value="{{ profile.id }}"/>
+                        <input type="hidden" name="id" value="{{ users.id }}"/>
                         <button type="submit" class="btn  btn-primary btn-xs"/>
                         <span class="glyphicon glyphicon-trash"></span>
                     </form></td>
                 </tr>
             {% empty %}
-                <li>No articles yet.</li>
+                <li>No patients yet.</li>
             {% endfor %}
         </table>
     </div>
