@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views, pt_views
 
 app_name = 'clinicalviewer'
 
@@ -18,4 +18,7 @@ urlpatterns = [
     path('clinicalviewer/visit/add/<int:pk>/', views.VisitCreate.as_view(), name='visit-form'),
     path('clinicalviewer/visit/detail/<int:pk>/', views.VisitDetail.as_view(), name='visit-detail'),
     path('clinicalviewer/visit/delete/<int:pk>/', views.VisitDelete.as_view(), name='visit-delete'),
+    path('clinicalviewer/pasthistory/add/<int:pk>/', views.PasthxCreate.as_view(), name='pasthx-form'),
+    path('clinicalviewer/pasthistory/detail/<int:pk>/', views.PasthxDetail.as_view(), name='pasthx-detail'),
+    path('clinicalviewer/pasthistory/delete/<int:pk>/', views.PasthxDelete.as_view(), name='pasthx-delete'),
 ]

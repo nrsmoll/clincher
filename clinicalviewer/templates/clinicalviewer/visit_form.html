@@ -2,17 +2,23 @@
 {% extends 'clinicalviewer/base.html' %}
 {% block label %}New Patient{% endblock %}
 
+
+
+
 {% block body %}
-
+{% include 'clinicalviewer/pt_sidebar.html' %}
+<center>
 <div class="container-fluid">
-<h1>{{ profile.firstname}} {{ profile.lastname}}</h1>
-<h3>{{ profile.date_of_birth }}</h3>
+<h1>{{ users.first_name}} {{ users.last_name}}</h1>
+<h3>{{ users.date_of_birth }}</h3>
+</center>
 
-    <div class="row">
 
         <div class="col-sm-12 col-md-7">
              <div class="'panel panel-default">
+
                  <div class="panel-body">
+
                     <form class="form-horizonal" action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% include 'clinicalviewer/form-template.html' %}
@@ -22,10 +28,12 @@
                             </div>
                         </div>
                     </form>
+
                  </div>
+
              </div>
         </div>
-    </div>
+
 
 
 

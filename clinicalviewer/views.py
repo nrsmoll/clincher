@@ -2,9 +2,12 @@ from django.views.generic import CreateView, UpdateView, DeleteView, ListView, D
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormMixin
 from django.urls import reverse_lazy, reverse
-from .models import Visit
-from .forms import VisitForm, PatientForm
+from .models import Visit, Pasthx
+from .forms import VisitForm, PatientForm, PasthxForm
 from django.contrib.auth import get_user_model
+from django.shortcuts import render, redirect
+
+
 
 class IndexView(ListView):
     template_name = 'clinicalviewer/index.html'
@@ -15,6 +18,7 @@ class IndexView(ListView):
 
 class PatientView(LoginRequiredMixin, ListView):
     model = get_user_model()
+    queryset=get_user_model().objects.filter(is_staff=False)
     # context_object_name = 'all_patients' <- object_list is the default name
     template_name = 'clinicalviewer/home.html'
 
@@ -49,7 +53,7 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(VisitCreate, self).get_context_data(**kwargs)
-        context['form'] = VisitForm(initial={'users': self.object})
+        context['form'] = VisitForm(initial={'patid': self.object})
         return context
 
     def post(self, request, *args, **kwargs):
@@ -67,6 +71,7 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
     def get_success_url(self):
         return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.pk})
 
+
 class VisitDetail(LoginRequiredMixin, DetailView):
     model = Visit
     template_name = 'clinicalviewer/visit_detail.html'
@@ -75,7 +80,7 @@ class VisitDelete(LoginRequiredMixin, DeleteView):
     model = Visit
 
     def get_success_url(self):
-        return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.user.pk})
+        return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.patid.pk})
 
 
 
@@ -84,6 +89,44 @@ class VisitDelete(LoginRequiredMixin, DeleteView):
 
 
 
+
+
+
+class PasthxCreate(LoginRequiredMixin, FormMixin, DetailView):
+    model = get_user_model()
+    form_class = PasthxForm
+    template_name = 'clinicalviewer/pasthx_form.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PasthxCreate, self).get_context_data(**kwargs)
+        context['form'] = PasthxForm(initial={'patid': self.object})
+        return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        form.save()
+        return super(PasthxCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.pk})
+
+
+class PasthxDetail(LoginRequiredMixin, DetailView):
+    model = Visit
+    template_name = 'clinicalviewer/pasthx_detail.html'
+
+class PasthxDelete(LoginRequiredMixin, DeleteView):
+    model = Pasthx
+
+    def get_success_url(self):
+        return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.patid.pk})
 
 
 

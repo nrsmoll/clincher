@@ -1,35 +1,37 @@
 {% extends 'clinicalviewer/base.html' %}
 {% block label %}Patient Visits{% endblock %}
-
-
 {% block body %}
+
+<center>
+<h1>{{ users.first_name}} {{ users.last_name}}</h1>
+<h3>{{ users.date_of_birth }}</h3>
+<a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="btn btn-primary btn-sm">New Consult</a>
+</center>
 
 {% include 'clinicalviewer/pt_sidebar.html' %}
 
-<center>
-<h1>{{ users.first_name}} {{ profile.lastname}}</h1>
-<h3>{{ profile.date_of_birth }}</h3>
-<button type="button">New Visit</button>
 
-</center>
-    <center>
-<div class="row">
-    <div class="col-sm">
-        <ul>
-        {% for visit in object.visit_set.all %}
-            <li><a href="{{ visit.get_absolute_url }}">{{ visit.visit_date }} - {{ visit.visit_label }}</a>
-                    <a href="#" role="button" class="btn btn-primary btn-xs">Edit</a>
-                    <form action="{% url 'clinicalviewer:visit-delete' visit.id %}" method="post" style="display: inline;">
+<center>
+<table style="width:40%">
+    <tr>
+        <th>Encounter Date</th>
+        <th>Reason for Visit</th>
+        <th>Tasks</th>
+    </tr>
+    {% for visit in visit_set.all %}
+    <tr>
+        <td><a href="{{ visit.get_absolute_url }}">{{ visit.visit_date }}</a></td>
+        <td>{{ visit.visit_label }}</td>
+        <td><a href="#" role="button" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
+        <form action="{% url 'clinicalviewer:visit-delete' visit.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
                         <input type="hidden" name="id" value="{{ visit.id }}"/>
-                        <button type="submit" class="btn  btn-primary btn-xs"/>
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </form>
-            </li>
-        {% endfor %}
-        </ul>
-    </div>
- </div>
+                        <button type="submit" class="btn  btn-primary btn-sm">
+                           <i class="fas fa-trash"></i></button></form>
+        </td>
+    </tr>
+    {% endfor %}
+
 </center>
 
 {% endblock %}

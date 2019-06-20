@@ -23,7 +23,7 @@ user = get_user_model().objects.create_user(username='john',
                                 last_name='Lennon',
                                 date_of_birth='1945-05-21',
                                 email='jlennon@beatles.com',
-                                password='glass onion',
+                                password='glassonion',
                                 is_staff='False')
 user.save
 
@@ -39,4 +39,12 @@ user = get_user_model().objects.create_user(username='jperalta',
 user.save
 
 
+user = get_user_model().objects.create_user(username='tmctesty',
+                                first_name='Testy',
+                                last_name='McTest',
+                                date_of_birth='1963-06-19',
+                                email='tmctesty@gmail.com',
+                                password='soawesome',
+                                is_staff='False')
+user.save
 

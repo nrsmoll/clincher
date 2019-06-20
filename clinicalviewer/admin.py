@@ -5,7 +5,7 @@ from .models import Visit
 
 
 class VisitAdmin(admin.ModelAdmin):
-    list_display = ['user', 'visit_label', 'visit_date', 'visit_type',]
+    list_display = ['patid', 'visit_label', 'visit_date', 'visit_type',]
 
 
 admin.site.register(Visit, VisitAdmin)

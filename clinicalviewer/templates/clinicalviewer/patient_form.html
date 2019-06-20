@@ -4,17 +4,13 @@
 
 {% block body %}
 
-<div class="container-fluid">
 
-    <div class="row">
+<div class="container" style="padding-top: 40px">
+    <div class="row"></div>
+  <div class="row justify-content-start">
 
-        <div class="col-sm-12 col-md-7">
-
-
-             <div class="'panel panel-default">
-                 <div class="panel-body">
-
-                    <form class="form-horizonal" action="" method="post" enctype="multipart/form-data">
+    <div class="col">
+      <form class="form-horizonal" action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% include 'clinicalviewer/form-template.html' %}
                         <div class="form-group">
@@ -23,12 +19,13 @@
                             </div>
                         </div>
                     </form>
-
-                 </div>
-
-             </div>
-        </div>
     </div>
+
+  </div>
+</div>
+
+
+
 
 
 

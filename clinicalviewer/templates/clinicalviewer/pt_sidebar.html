@@ -2,8 +2,43 @@
 
 <!-- Side navigation -->
 <div class="sidenav">
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+
+   <a href="{% url 'clinicalviewer:patient-detail' users.id %}">Patient Profile</a>
+    <a href="#">Procedures</a>
+    <button class="dropdown-btn">Past History
+        <i class="fa fa-caret-down"></i>
+    </button>
+            <div class="dropdown-container">
+                <a href="{% url 'clinicalviewer:pasthx-form' users.id %}">Add</a>
+                <div class="dropdown-divider" style="border-color:white;"></div>
+                <a href="#">Link 2</a>
+            </div>
+    <a href="#">Social History</a>
+    <a href="#">Medications</a>
+    <a href="#">Documents</a>
+    <a href="#">Imaging</a>
+    <a href="#">Pathology</a>
+
 </div>
+
+
+
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>

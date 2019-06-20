@@ -4,11 +4,11 @@
 
 
 {% block body %}
-<div class="container" xmlns="http://www.w3.org/1999/html">
+<div class="container">
 <h3>Patient List</h3>
  <div class="row">
-    <div class="col-sm">
-        <table class="tablepadding">
+    <div class="col">
+        <table>
             <tr>
                 <th>Name</th>
                 <th>DOB</th>
@@ -18,22 +18,22 @@
                 <tr>
                     <td><a href="{% url 'clinicalviewer:patient-detail' users.id %}">{{users.first_name}} {{users.last_name}}</a></td>
                     <td> {{ users.date_of_birth }} </td>
-                    <td><a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="btn btn-primary btn-xs">New Consult</a></td>
-                    <td><a href="#" role="button" class="btn btn-primary btn-xs">New Procedure</a></td>
-                    <td><a href="{% url 'clinicalviewer:patient-detail' users.id %}" role="button" class="btn btn-primary btn-xs">Visit List</a></td>
-                    <td><a href="{% url 'clinicalviewer:patient-update' users.id %}" role="button" class="btn btn-primary btn-xs">Edit Details</a></td>
-                    <td><form action="{% url 'clinicalviewer:patient-delete' users.id %}" method="post" style="display: inline;">
+                    <td><a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="btn btn-primary btn-sm">New Consult</a>
+                    <a href="#" role="button" class="btn btn-primary btn-sm">New Procedure</a>
+                    <a href="{% url 'clinicalviewer:patient-detail' users.id %}" role="button" class="btn btn-primary btn-sm">Visit List</a>
+                    <a href="{% url 'clinicalviewer:patient-update' users.id %}" role="button" class="btn btn-primary btn-sm">Edit Details</a>
+                                <form action="{% url 'clinicalviewer:patient-delete' users.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
-                        <input type="hidden" name="id" value="{{ users.id }}"/>
-                        <button type="submit" class="btn  btn-primary btn-xs"/>
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </form></td>
+                        <input type="hidden" name="id" value="{{ visit.id }}"/>
+                        <button type="submit" class="btn  btn-primary btn-sm"><i class="fas fa-trash"></i>Delete</button></form>
                 </tr>
             {% empty %}
-                <li>No patients yet.</li>
+               <tr> <td>No patients yet.</td> </tr>
             {% endfor %}
         </table>
     </div>
  </div>
+</div>
+
 {% endblock %}
 
