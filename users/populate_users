@@ -39,12 +39,34 @@ user = get_user_model().objects.create_user(username='jperalta',
 user.save
 
 
-user = get_user_model().objects.create_user(username='tmctesty',
-                                first_name='Testy',
-                                last_name='McTest',
-                                date_of_birth='1963-06-19',
-                                email='tmctesty@gmail.com',
+user = get_user_model().objects.create_user(username='rdiaz',
+                                first_name='Rosa',
+                                last_name='Diaz',
+                                date_of_birth='1989-01-11',
+                                email='rdiaz@gmail.com',
                                 password='soawesome',
                                 is_staff='False')
 user.save
+
+
+user = get_user_model().objects.create_user(username='rforeman',
+                                first_name='Red',
+                                last_name='Foreman',
+                                date_of_birth='1952-12-21',
+                                email='rforeman@gmail.com',
+                                password='footupass',
+                                is_staff='False')
+user.save
+
+
+user = get_user_model().objects.create_user(username='dpinciatti',
+                                first_name='Donna',
+                                last_name='Pinciatti',
+                                date_of_birth='1977-02-22',
+                                email='rpinciatti@yahoo.com',
+                                password='soawesome',
+                                is_staff='False')
+user.save
+
+
 

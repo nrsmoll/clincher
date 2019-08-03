@@ -16,10 +16,10 @@ class PatientForm(ModelForm):
         }
 
 
-
 class VisitForm(forms.ModelForm):
     visit_date = forms.DateField(initial=datetime.date.today, widget = DateInput())
-    visit_notes = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Visit Notes', 'id': 'editor', 'rows':50, 'cols':25}))
+    visit_notes = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Encounter Notes', 'id': 'editor', 'rows':50, 'cols':25}))
+    visit_label = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Encounter Reason' }))
     class Meta:
         model = Visit
         fields = ('__all__')

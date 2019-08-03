@@ -2,17 +2,17 @@
 {% block label %}Patient Visits{% endblock %}
 {% block body %}
 
-<center>
-<h1>{{ users.first_name}} {{ users.last_name}}</h1>
-<h3>{{ users.date_of_birth }}</h3>
-<a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="btn btn-primary btn-sm">New Consult</a>
-</center>
+
+<h1 class="form-group">{{ users.first_name}} {{ users.last_name}}</h1>
+<h3 class="form-group">{{ users.date_of_birth }}</h3>
+<a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="form-group btn btn-primary btn-sm">New Consult</a>
+
 
 {% include 'clinicalviewer/pt_sidebar.html' %}
 
 
-<center>
-<table style="width:40%">
+
+<table class="form-group" style="width:40%">
     <tr>
         <th>Encounter Date</th>
         <th>Reason for Visit</th>
@@ -20,7 +20,7 @@
     </tr>
     {% for visit in visit_set.all %}
     <tr>
-        <td><a href="{{ visit.get_absolute_url }}">{{ visit.visit_date }}</a></td>
+        <td><a href="{% url 'clinicalviewer:visit-detail' visit.id %}">{{ visit.visit_date }}</a></td>
         <td>{{ visit.visit_label }}</td>
         <td><a href="#" role="button" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
         <form action="{% url 'clinicalviewer:visit-delete' visit.id %}" method="post" style="display: inline;">
@@ -32,7 +32,6 @@
     </tr>
     {% endfor %}
 
-</center>
 
 {% endblock %}
 

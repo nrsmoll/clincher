@@ -5,10 +5,8 @@
 
 
 {% block body %}
-    <center>
-
-
-<h3>Welcome to Clincher</h3>
+<div class="form-group container">
+<h3 >Welcome to Clincher</h3>
 
         {% if user.is_authenticated %}
   Hi {{ user.username }}!
@@ -16,7 +14,6 @@
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
 {% endif %}
-
-    </center>
+</div>
 {% endblock %}
 

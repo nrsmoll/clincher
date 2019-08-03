@@ -28,7 +28,7 @@ class PatientDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PatientDetailView, self).get_context_data(**kwargs)
-        context['visit_set'] = Visit.objects.all()
+        context['visit_set'] = Visit.objects.filter(patid=self.object)
         # And so on for more models
         return context
 
@@ -51,9 +51,11 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
     form_class = VisitForm
     template_name = 'clinicalviewer/visit_form.html'
 
+
     def get_context_data(self, **kwargs):
         context = super(VisitCreate, self).get_context_data(**kwargs)
         context['form'] = VisitForm(initial={'patid': self.object})
+        context['visit_set'] = Visit.objects.filter(patid=self.object)
         return context
 
     def post(self, request, *args, **kwargs):
@@ -74,7 +76,17 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
 
 class VisitDetail(LoginRequiredMixin, DetailView):
     model = Visit
+
+
     template_name = 'clinicalviewer/visit_detail.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super(VisitDetail, self).get_context_data(**kwargs)
+        #reverse lookup
+        context['visit_set'] = Visit.objects.all()
+        # And so on for more models
+        return context
 
 class VisitDelete(LoginRequiredMixin, DeleteView):
     model = Visit

@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, pt_views
+from . import views
 
 app_name = 'clinicalviewer'
 

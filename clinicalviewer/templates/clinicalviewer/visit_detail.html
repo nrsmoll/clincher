@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Visit Detail</title>
-</head>
-<body>
+{% extends 'clinicalviewer/base.html' %}
+{% block label %}Visit Details{% endblock %}
 
-</body>
-</html>
+
+
+{% block body %}
+
+
+<h1>{{ users.first_name}} {{ users.last_name}}</h1>
+<h3>{{ users.date_of_birth }}</h3>
+
+
+   <p class="form-group">
+       {{ visit.visit_date }}
+   </p>
+    <p class="form-group">
+       {{ visit.visit_notes }}
+   </p>
+
+    <table class="form-group" style="width:40%">
+    <tr>
+        <th>Encounter Date</th>
+        <th>Reason for Visit</th>
+        <th>Tasks</th>
+    </tr>
+    {% for visit in visit_set.all %}
+    <tr>
+        <td><a href="{% url 'clinicalviewer:visit-detail' visit.id %}">{{ visit.visit_date }}</a></td>
+        <td>{{ visit.visit_label }}</td>
+        <td><a href="#" role="button" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
+        <form action="{% url 'clinicalviewer:visit-delete' visit.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ visit.id }}"/>
+                        <button type="submit" class="btn  btn-primary btn-sm">
+                           <i class="fas fa-trash"></i></button></form>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+
+
+{% endblock %}
+
+
+
+

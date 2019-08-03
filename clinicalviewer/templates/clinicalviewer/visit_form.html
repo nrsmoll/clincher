@@ -7,37 +7,37 @@
 
 {% block body %}
 {% include 'clinicalviewer/pt_sidebar.html' %}
-<center>
+
 <div class="container-fluid">
-<h1>{{ users.first_name}} {{ users.last_name}}</h1>
-<h3>{{ users.date_of_birth }}</h3>
-</center>
+<h1 class="form-group">{{ users.first_name}} {{ users.last_name}}</h1>
+<h3 class="form-group">{{ users.date_of_birth }}</h3>
 
 
-        <div class="col-sm-12 col-md-7">
-             <div class="'panel panel-default">
-
-                 <div class="panel-body">
-
-                    <form class="form-horizonal" action="" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {% include 'clinicalviewer/form-template.html' %}
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                 <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
+   <div class="row">
+        <div class="col-sm-10">
+            <form name="myform" novalidate class="form-horizonal" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                    {% include 'clinicalviewer/form-template.html' %}
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Submit</>
                         </div>
-                    </form>
-
-                 </div>
-
-             </div>
+                    </div>
+            </form>
         </div>
-
-
-
-
-
-
-</div>
+        <div class="col-sm-2">
+            <table >
+                    <tr>
+                        <th>Encounter Date</th>
+                        <th>Reason for Visit</th>
+                    </tr>
+                    {% for visit in visit_set.all %}
+                    <tr>
+                        <td><a href="{% url 'clinicalviewer:visit-detail' visit.id %}">{{ visit.visit_date }}</a></td>
+                        <td>{{ visit.visit_label }}</td>
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+   </div>
 {% endblock %}
