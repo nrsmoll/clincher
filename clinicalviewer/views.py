@@ -2,10 +2,11 @@ from django.views.generic import CreateView, UpdateView, DeleteView, ListView, D
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormMixin
 from django.urls import reverse_lazy, reverse
-from .models import Visit, Pasthx
-from .forms import VisitForm, PatientForm, PasthxForm
+from .models import Encounter, Pasthx, EncounterReason
+from .forms import EncounterForm, PatientForm, PasthxForm
 from django.contrib.auth import get_user_model
-from django.shortcuts import render, redirect
+
+from dal import autocomplete
 
 
 
@@ -18,9 +19,11 @@ class IndexView(ListView):
 
 class PatientView(LoginRequiredMixin, ListView):
     model = get_user_model()
-    queryset=get_user_model().objects.filter(is_staff=False)
-    # context_object_name = 'all_patients' <- object_list is the default name
     template_name = 'clinicalviewer/home.html'
+    queryset=get_user_model().objects.filter(is_staff=False)
+    # context_object_name = 'all_patients' <- because object_list is the default name
+
+
 
 class PatientDetailView(LoginRequiredMixin, DetailView):
     model = get_user_model()
@@ -28,7 +31,7 @@ class PatientDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PatientDetailView, self).get_context_data(**kwargs)
-        context['visit_set'] = Visit.objects.filter(patid=self.object)
+        context['encounter_set'] = Encounter.objects.filter(patid=self.object)
         # And so on for more models
         return context
 
@@ -46,16 +49,16 @@ class PatientDelete(LoginRequiredMixin, DeleteView):
     model = get_user_model()
     success_url = reverse_lazy('clinicalviewer:index')
 
-class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
+class EncounterCreate(LoginRequiredMixin, FormMixin, DetailView):
     model = get_user_model()
-    form_class = VisitForm
-    template_name = 'clinicalviewer/visit_form.html'
+    form_class = EncounterForm
+    template_name = 'clinicalviewer/encounter_form.html'
 
 
     def get_context_data(self, **kwargs):
-        context = super(VisitCreate, self).get_context_data(**kwargs)
-        context['form'] = VisitForm(initial={'patid': self.object})
-        context['visit_set'] = Visit.objects.filter(patid=self.object)
+        context = super(EncounterCreate, self).get_context_data(**kwargs)
+        context['form'] = EncounterForm(initial={'patid': self.object})
+        context['encounter_set'] = Encounter.objects.filter(patid=self.object)
         return context
 
     def post(self, request, *args, **kwargs):
@@ -68,38 +71,30 @@ class VisitCreate(LoginRequiredMixin, FormMixin, DetailView):
 
     def form_valid(self, form):
         form.save()
-        return super(VisitCreate, self).form_valid(form)
+        return super(EncounterCreate, self).form_valid(form)
 
     def get_success_url(self):
         return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.pk})
 
 
-class VisitDetail(LoginRequiredMixin, DetailView):
-    model = Visit
-
-
-    template_name = 'clinicalviewer/visit_detail.html'
-
+class EncounterDetail(LoginRequiredMixin, DetailView):
+    model = Encounter
+    template_name = 'clinicalviewer/encounter_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(VisitDetail, self).get_context_data(**kwargs)
+        context = super(EncounterDetail, self).get_context_data(**kwargs)
         #reverse lookup
-        context['visit_set'] = Visit.objects.all()
+        encounter_set = Encounter.objects.filter(patid=self.patid)
+        context.update({'encounter_set': encounter_set})
+        #context['visit_set'] = Encounter.objects.filter(patid=self.patid)
         # And so on for more models
         return context
 
-class VisitDelete(LoginRequiredMixin, DeleteView):
-    model = Visit
+class EncounterDelete(LoginRequiredMixin, DeleteView):
+    model = Encounter
 
     def get_success_url(self):
         return reverse('clinicalviewer:patient-detail', kwargs={'pk': self.object.patid.pk})
-
-
-
-
-
-
-
 
 
 
@@ -131,7 +126,7 @@ class PasthxCreate(LoginRequiredMixin, FormMixin, DetailView):
 
 
 class PasthxDetail(LoginRequiredMixin, DetailView):
-    model = Visit
+    model = Encounter
     template_name = 'clinicalviewer/pasthx_detail.html'
 
 class PasthxDelete(LoginRequiredMixin, DeleteView):
@@ -147,12 +142,15 @@ class PasthxDelete(LoginRequiredMixin, DeleteView):
 
 
 
-
-
-
-
-
-
+class EncounterReasonAutocomplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        # Don't forget to filter out results depending on the visitor !
+        if not self.request.user.is_authenticated:
+            return EncounterReason.objects.none()
+        qs = EncounterReason.objects.all()
+        if self.q:
+            qs = qs.filter(name__istartswith=self.q)
+        return qs
 
 
 

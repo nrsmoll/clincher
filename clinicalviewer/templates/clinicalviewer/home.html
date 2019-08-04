@@ -18,13 +18,13 @@
                 <tr>
                     <td><a href="{% url 'clinicalviewer:patient-detail' users.id %}">{{users.first_name}} {{users.last_name}}</a></td>
                     <td> {{ users.date_of_birth }} </td>
-                    <td><a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="btn btn-primary btn-sm">New Consult</a>
+                    <td><a href="{% url 'clinicalviewer:encounter-form' users.id %}"  role="button" class="btn btn-primary btn-sm">New Consult</a>
                     <a href="#" role="button" class="btn btn-primary btn-sm">New Procedure</a>
-                    <a href="{% url 'clinicalviewer:patient-detail' users.id %}" role="button" class="btn btn-primary btn-sm">Visit List</a>
+                    <a href="{% url 'clinicalviewer:patient-detail' users.id %}" role="button" class="btn btn-primary btn-sm">Encounter List</a>
                     <a href="{% url 'clinicalviewer:patient-update' users.id %}" role="button" class="btn btn-primary btn-sm">Edit Details</a>
                                 <form action="{% url 'clinicalviewer:patient-delete' users.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
-                        <input type="hidden" name="id" value="{{ visit.id }}"/>
+                        <input type="hidden" name="id" value="{{ encounter.id }}"/>
                         <button type="submit" class="btn  btn-primary btn-sm"><i class="fas fa-trash"></i>Delete</button></form>
                 </tr>
             {% empty %}

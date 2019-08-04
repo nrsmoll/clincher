@@ -1,7 +1,7 @@
 <!-- Loads the path to the static files-->
 {% extends 'clinicalviewer/base.html' %}
 {% block label %}New Patient{% endblock %}
-
+{% load static %}
 
 
 
@@ -29,15 +29,23 @@
             <table >
                     <tr>
                         <th>Encounter Date</th>
-                        <th>Reason for Visit</th>
+                        <th>Encounter Reason</th>
                     </tr>
-                    {% for visit in visit_set.all %}
+                    {% for encounter in encounter_set.all %}
                     <tr>
-                        <td><a href="{% url 'clinicalviewer:visit-detail' visit.id %}">{{ visit.visit_date }}</a></td>
-                        <td>{{ visit.visit_label }}</td>
+                        <td><a href="{% url 'clinicalviewer:encounter-detail' encounter.id %}">{{ encounter.encounter_date }}</a></td>
+                        <td>{{ encounter.encounter_label }}</td>
                     </tr>
                     {% endfor %}
             </table>
         </div>
    </div>
+{% endblock %}
+
+{% block footer %}
+
+<script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+
+{{ form.media }}
+
 {% endblock %}

@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     'clinicalviewer',
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-
+    'import_export',
 ]
 
-AUTH_USER_MODEL = 'users.Users'
+AUTH_USER_MODEL = 'users.Users';
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +56,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+FIXTURE_DIRS = (
+   '/path/to/myapp/fixtures/',
+)
 
 ROOT_URLCONF = 'ehr.urls'
 

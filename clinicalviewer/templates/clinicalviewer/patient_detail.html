@@ -1,11 +1,11 @@
 {% extends 'clinicalviewer/base.html' %}
-{% block label %}Patient Visits{% endblock %}
+{% block label %}Patient Encounters{% endblock %}
 {% block body %}
 
 
 <h1 class="form-group">{{ users.first_name}} {{ users.last_name}}</h1>
 <h3 class="form-group">{{ users.date_of_birth }}</h3>
-<a href="{% url 'clinicalviewer:visit-form' users.id %}"  role="button" class="form-group btn btn-primary btn-sm">New Consult</a>
+<a href="{% url 'clinicalviewer:encounter-form' users.id %}"  role="button" class="form-group btn btn-primary btn-sm">New Consult</a>
 
 
 {% include 'clinicalviewer/pt_sidebar.html' %}
@@ -15,17 +15,17 @@
 <table class="form-group" style="width:40%">
     <tr>
         <th>Encounter Date</th>
-        <th>Reason for Visit</th>
+        <th>Reason for Encounter</th>
         <th>Tasks</th>
     </tr>
-    {% for visit in visit_set.all %}
+    {% for encounter in encounter_set.all %}
     <tr>
-        <td><a href="{% url 'clinicalviewer:visit-detail' visit.id %}">{{ visit.visit_date }}</a></td>
-        <td>{{ visit.visit_label }}</td>
+        <td><a href="{% url 'clinicalviewer:encounter-detail' encounter.id %}">{{ encounter.encounter_date }}</a></td>
+        <td>{{ encounter.encounter_label }}</td>
         <td><a href="#" role="button" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
-        <form action="{% url 'clinicalviewer:visit-delete' visit.id %}" method="post" style="display: inline;">
+        <form action="{% url 'clinicalviewer:encounter-delete' encounter.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
-                        <input type="hidden" name="id" value="{{ visit.id }}"/>
+                        <input type="hidden" name="id" value="{{ encounter.id }}"/>
                         <button type="submit" class="btn  btn-primary btn-sm">
                            <i class="fas fa-trash"></i></button></form>
         </td>
