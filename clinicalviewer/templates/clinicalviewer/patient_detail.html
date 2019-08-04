@@ -3,16 +3,16 @@
 {% block body %}
 
 
-<h1 class="form-group">{{ users.first_name}} {{ users.last_name}}</h1>
-<h3 class="form-group">{{ users.date_of_birth }}</h3>
-<a href="{% url 'clinicalviewer:encounter-form' users.id %}"  role="button" class="form-group btn btn-primary btn-sm">New Consult</a>
+<h1 class="left-sidebar-margin">{{ users.first_name}} {{ users.last_name}}</h1>
+<h3 class="left-sidebar-margin">{{ users.date_of_birth }}</h3>
+<a href="{% url 'clinicalviewer:encounter-form' users.id %}"  role="button" class="left-sidebar-margin btn btn-primary btn-sm">New Consult</a>
 
 
 {% include 'clinicalviewer/pt_sidebar.html' %}
 
 
 
-<table class="form-group" style="width:40%">
+<table class="left-sidebar-margin" style="width:40%">
     <tr>
         <th>Encounter Date</th>
         <th>Reason for Encounter</th>
@@ -21,7 +21,7 @@
     {% for encounter in encounter_set.all %}
     <tr>
         <td><a href="{% url 'clinicalviewer:encounter-detail' encounter.id %}">{{ encounter.encounter_date }}</a></td>
-        <td>{{ encounter.encounter_label }}</td>
+        <td>{{ encounter.free_text_label|default_if_none:encounter.encounter_label  }}</td>
         <td><a href="#" role="button" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
         <form action="{% url 'clinicalviewer:encounter-delete' encounter.id %}" method="post" style="display: inline;">
                         {% csrf_token %}

@@ -149,7 +149,7 @@ class EncounterReasonAutocomplete(autocomplete.Select2QuerySetView):
             return EncounterReason.objects.none()
         qs = EncounterReason.objects.all()
         if self.q:
-            qs = qs.filter(name__istartswith=self.q)
+            qs = qs.filter(reason__istartswith=self.q)
         return qs
 
 

@@ -9,8 +9,8 @@
 {% include 'clinicalviewer/pt_sidebar.html' %}
 
 <div class="container-fluid">
-<h1 class="form-group">{{ users.first_name}} {{ users.last_name}}</h1>
-<h3 class="form-group">{{ users.date_of_birth }}</h3>
+<h1 class="left-sidebar-margin">{{ users.first_name}} {{ users.last_name}}</h1>
+<h3 class="left-sidebar-margin">{{ users.date_of_birth }}</h3>
 
 
    <div class="row">
@@ -18,7 +18,7 @@
             <form name="myform" novalidate class="form-horizonal" action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                     {% include 'clinicalviewer/form-template.html' %}
-                    <div class="form-group">
+                    <div class="left-sidebar-margin">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-success">Submit</>
                         </div>
@@ -34,7 +34,7 @@
                     {% for encounter in encounter_set.all %}
                     <tr>
                         <td><a href="{% url 'clinicalviewer:encounter-detail' encounter.id %}">{{ encounter.encounter_date }}</a></td>
-                        <td>{{ encounter.encounter_label }}</td>
+                        <td>{{ encounter.free_text_label|default_if_none:encounter.encounter_label }}</td>
                     </tr>
                     {% endfor %}
             </table>
